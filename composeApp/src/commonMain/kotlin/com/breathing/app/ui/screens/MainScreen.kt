@@ -18,6 +18,7 @@ import com.breathing.app.platform.HapticFeedback
 import kotlinx.coroutines.delay
 
 @Composable
+@OptIn(ExperimentalMaterial3Api::class)
 fun MainScreen() {
     var phase by remember { mutableStateOf("Inhale") }
     var isActive by remember { mutableStateOf(false) }
