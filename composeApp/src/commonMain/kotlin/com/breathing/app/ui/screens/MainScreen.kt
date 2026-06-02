@@ -7,6 +7,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
@@ -46,8 +47,8 @@ fun MainScreen() {
             Box(Modifier.size(240.dp), contentAlignment = Alignment.Center) {
                 Canvas(Modifier.fillMaxSize()) {
                     val r = size.minDimension / 2
-                    drawCircle(Color(0xFF4A90D9).copy(alpha = 0.08f), r * 1.5f, center = Offset(size.width/2, size.height/2))
-                    drawCircle(Color(0xFF4A90D9).copy(alpha = 0.12f), r * if (isActive) 1.3f else 1f, center = Offset(size.width/2, size.height/2))
+                    drawCircle(Color(0xFF4A90D9), r * 1.5f, center = Offset(size.width/2, size.height/2))
+                    drawCircle(Color(0xFF4A90D9), r * if (isActive) 1.3f else 1f, center = Offset(size.width/2, size.height/2))
                     drawCircle(Color(0xFF4A90D9).copy(alpha = if (isActive) 0.2f else 0.15f), r * if (isActive) scale else 1f, center = Offset(size.width/2, size.height/2))
                 }
                 Text(phase, fontSize = 28.sp, fontWeight = FontWeight.Bold, color = Color(0xFF4A90D9))
